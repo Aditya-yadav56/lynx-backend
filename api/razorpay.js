@@ -3,7 +3,15 @@ import Razorpay from "razorpay";
 import cors from "cors";
 
 const app = express();
+
+// Allow all origins (for testing)
 app.use(cors());
+
+// OR: restrict to your frontend URL only (safer)
+app.use(cors({
+  origin: "http://localhost:5173", // your frontend URL
+}));
+
 app.use(express.json());
 
 const razorpay = new Razorpay({
@@ -13,7 +21,7 @@ const razorpay = new Razorpay({
 
 app.post("/create-order", async (req, res) => {
   const options = {
-    amount: req.body.amount * 100, // convert to paise
+    amount: req.body.amount * 100,
     currency: "INR",
     receipt: "receipt#1",
   };
@@ -28,4 +36,3 @@ app.post("/create-order", async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
