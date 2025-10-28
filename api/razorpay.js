@@ -9,6 +9,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://lynx-ai-frontend-1-9re2is99j-aditya-yadav56s-projects.vercel.app',
+  "https://lynx-ai-frontend-1.vercel.app/"
 ];
 
 app.use(cors({
