@@ -32,8 +32,8 @@ app.use(cors({
 app.use(express.json());
 
 const razorpay = new Razorpay({
-  key_id: "rzp_test_RXvVfYiWIjkUTz",
-  key_secret: "INT7DetaMPM1tcjxN2TrUz9a",
+  key_id: "rzp_live_RYmzLFC81ZtW3U",
+  key_secret: "5sYYMEYGqkmS02D6PYMIZb8l",
 });
 
 // Health check endpoint
